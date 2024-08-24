@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Link</title>
+</head>
+<style>
+    .navbar ul{
+        list-style-type:none;
+        overflow: hidden;
+        display:flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .navbar h1{
+        position: absolute; 
+        top: 0px; 
+        left: 20px; 
+        font-size: 32px; 
+        line-height: 48px; 
+        font-weight: 700; 
+        color: #171A1FFF;
+    }
+
+    .navbar li {
+        padding:20px;
+  font-size: 20px; 
+  line-height: 26px; 
+  font-weight: 400; 
+  color: #323743FF;
+
+    }
+    .navbar button{
+        color: #117B34FF;
+        background-color: #EEFDF3FF;
+        border-style:none;
+        margin-left: 200px;
+        width: 213px; 
+        height: 51px; 
+        padding: 0 20px; 
+    }
+
+    a{
+        color: #333;
+font-size: 17px;
+text-decoration: none;
+margin: 15px 0;
+    }
+
+    .active{
+        color:#6BD3A8FF;
+    }
+
+    .home-container{
+        display:flex;
+        justify-content: space-evenly;
+        background-color: rgba(228, 228, 228, 0.183);
+        font-size: 30px;
+    }
+
+    .left-panel{
+        display:flex;
+        flex-direction: column;
+        align-items:center
+    }
+
+    .left-panel button{
+        width: 227px; 
+  height: 57px; 
+    font-size: 19px; 
+  line-height: 31px; 
+  font-weight: 700; 
+  color: #82A6A8FF; 
+  background: #FEFEFEFF; 
+  opacity: 1; 
+  border-style: solid;
+  border-radius: 3px;
+  border-color:#CCDBDCFF ;
+  margin-top: 20px;
+    }
+
+    .left-panel img{
+        width: 668px; 
+        height: 342px; 
+    }
+
+    .navigation-cards{
+        display:grid;
+        grid-template-columns: 10em 10em;
+        gap:10px;
+        font-size: 40px; 
+  line-height: 48px; 
+  font-weight: 700; 
+  color: #171A1FFF
+    }
+
+    .navigation-cards button{
+        border-radius: 8px; /* border-xl */
+  border-width: 1px; 
+  border-color: #FFFFFFFF;
+  height: 300px;
+  background:white;
+    }
+</style>
+<body>
+        <nav class="navbar">
+            <ul>
+                <h1>Heathlink</h1>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="">Educational Portal</a></li>
+                <li><a href="">My Medical Card</a></li>
+                <li><a href="">Settings</a></li> 
+                <button>Book An Appointment</button>  
+            </ul>
+        </nav>
+<div class="home-container">
+    <div class="left-panel">
+<img src="src\images\Image 30.png" alt="">
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora optio sequi corrupti reprehenderit illo
+<br>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, tempor</p>
+<button class="health-hotline-button">Health Hotline</button>
+<br>
+<button class="know-your-rights-button">Know Your Rights</button>
+</div>
+<div class="navigation-cards">
+    <button><a href="mymedicalcard.html" class="navigation-button button-active">My MediCard</a></button>
+    <button><a href="educationportal.html" class="navigation-button">Education Portal</a></button>
+    <button><a href="myappointments.html" class="navigation-button">My Appointments</a></button>
+    <button><a href="clinicsnearme.html" class="navigation-button">Clinics Near Me</a></button>
+</div>
+</div>
+</body>
+</html>
