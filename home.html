@@ -103,6 +103,62 @@ margin: 15px 0;
   height: 300px;
   background:white;
     }
+
+.home-active{
+    background-color: red;
+    color:red;
+}
+
+    section{
+        align-items: center;
+    }
+    .my-medical-card{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;;
+    }
+
+    select {
+    width: 526px; 
+  height: 91px; 
+  padding-left: 12px; 
+  padding-right: 34px;
+  font-size: 20px;
+  border-color: rgb(202, 202, 202);
+}
+
+    .medical-card{
+        display:flex;
+        align-items:center;
+        border: 2px solid #aeaeae;
+    padding: 20px;
+    border-radius: 10px;
+    width: 1000px;
+    margin-top: 20px;
+    font-size: 30px;
+    gap:20px;
+}
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.medical-card-navigation{
+    display:flex;
+}
+.medical-card-navigation button{
+    color: #004E0DFF;
+        background-color: #94FFA5FF;
+        border-style:none;
+        margin-top: 20px;
+        margin-left: 200px;
+        width: 213px; 
+        height: 51px; 
+        padding: 0 20px; 
+        font-size: 20px;
+}
 </style>
 <body>
         <nav class="navbar">
@@ -126,11 +182,79 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
 <button class="know-your-rights-button">Know Your Rights</button>
 </div>
 <div class="navigation-cards">
-    <button><a href="mymedicalcard.html" class="navigation-button button-active">My MediCard</a></button>
-    <button><a href="educationportal.html" class="navigation-button">Education Portal</a></button>
-    <button><a href="myappointments.html" class="navigation-button">My Appointments</a></button>
-    <button><a href="clinicsnearme.html" class="navigation-button">Clinics Near Me</a></button>
+    <button class="home-active"><a href="mymedicalcard.html" >My MediCard</a></button>
+    <button> <a href="educationportal.html">Education Portal</a></button>
+    <button><a href="myappointments.html">My Appointments</a></button>
+    <button><a href="clinicsnearme.html" >Clinics Near Me</a></button>
 </div>
 </div>
+
+<section class="my-medical-card" id="my-medical-card">
+<h1>My Medical Card</h1>
+<select class="drop-down" id="profileSelect" name="profiles">
+    <option value="0">Simba</option>
+    <option value="1">Sarah</option>
+</select>
+<div class="medical-card" id="medicalCard">
+    <img src="src\images\profile.png" alt="Profile Picture" class="profile-pic">
+    <div class="medical-card-information">
+        <p>Full Name: <span id="fullName"></span></p>
+        <p>Nationality: <span id="nationality"></span></p>
+            <p>Age: <span id="age"></span></p>
+            <p>Gender: <span id="gender"></span></p>
+    </div>
+</div>
+
+<div class="medical-card-navigation">
+    <button>Documents</button>
+    <button>Medical History</button>
+</div>
+</section>
+<section class="clinics-near-me" id="clinics-near-me">
+<h1>Clinics Near Me</h1>
+<form class="search-form" id="search-form">
+    <input type="search" placeholder="Search" required id="search-form-input" class="search-form-input" />
+    <input type="submit" value="Search" class="search-form-button"/>
+</form>
+<div class="clinc-card">
+    <h2></h2>
+    <p class="location">Location</p>
+    <p class="times-visited">Times Visited:</p>
+</div>
+
+</section>
+
+<script>
+const profiles =[
+    {
+        fullName: "Simba Moyo",
+        nationality: "Zimbabwean",
+        age: 32,
+        gender: "Male"
+    },
+    {
+        fullName: "Sarah Moyo",
+        nationality: "South African",
+        age: 30,
+        gender: "Female"
+    }
+];
+
+const profileSelect = document.getElementById('profileSelect');
+const fullName = document.getElementById('fullName');
+const nationality = document.getElementById('nationality');
+const age = document.getElementById('age');
+const gender = document.getElementById('gender');
+
+profileSelect.addEventListener('change', function(){
+    const selectedProfile = profiles[this.value];
+    fullName.textContent = selectedProfile.fullName;
+    nationality.textContent = selectedProfile.nationality;
+    age.textContent = selectedProfile.age;
+    gender.textContent = selectedProfile.gender;
+});
+
+profileSelect.dispatchEvent(new Event('change'));
+</script>
 </body>
 </html>
