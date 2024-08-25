@@ -159,6 +159,10 @@ margin: 15px 0;
         padding: 0 20px; 
         font-size: 20px;
 }
+
+#map{
+    height:60vh;
+}
 </style>
 <body>
         <nav class="navbar">
@@ -216,6 +220,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
     <input type="search" placeholder="Search" required id="search-form-input" class="search-form-input" />
     <input type="submit" value="Search" class="search-form-button"/>
 </form>
+<div id="map">
+</div>
 <div class="clinc-card">
     <h2></h2>
     <p class="location">Location</p>
@@ -255,6 +261,25 @@ profileSelect.addEventListener('change', function(){
 });
 
 profileSelect.dispatchEvent(new Event('change'));
+
+
+let map;
+
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
+initMap();
+</script>
+
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLu4XeFTnWPP34DXwcK0l7f9LyYh884w&libraries=places"
+defer>
 </script>
 </body>
 </html>
