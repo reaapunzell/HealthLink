@@ -230,56 +230,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
 
 </section>
 
-<script>
-const profiles =[
-    {
-        fullName: "Simba Moyo",
-        nationality: "Zimbabwean",
-        age: 32,
-        gender: "Male"
-    },
-    {
-        fullName: "Sarah Moyo",
-        nationality: "South African",
-        age: 30,
-        gender: "Female"
-    }
-];
-
-const profileSelect = document.getElementById('profileSelect');
-const fullName = document.getElementById('fullName');
-const nationality = document.getElementById('nationality');
-const age = document.getElementById('age');
-const gender = document.getElementById('gender');
-
-profileSelect.addEventListener('change', function(){
-    const selectedProfile = profiles[this.value];
-    fullName.textContent = selectedProfile.fullName;
-    nationality.textContent = selectedProfile.nationality;
-    age.textContent = selectedProfile.age;
-    gender.textContent = selectedProfile.gender;
-});
-
-profileSelect.dispatchEvent(new Event('change'));
 
 
-let map;
-
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
-
-  map = new Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
-
-initMap();
-</script>
-
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLu4XeFTnWPP34DXwcK0l7f9LyYh884w&libraries=places"
-defer>
-</script>
+<script src="index.js" defer></script>
 </body>
 </html>
