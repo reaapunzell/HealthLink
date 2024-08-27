@@ -55,6 +55,7 @@ profileSelect.dispatchEvent(new Event('change'));
       zoom: 14,
     });
   
+    
     // HTML5 Geolocation
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -86,7 +87,7 @@ profileSelect.dispatchEvent(new Event('change'));
       location: location,
       radius: '5000',
       type: ['hospital', 'clinic', 'doctor'],
-      keyword: 'clinic',
+      keyword: ['clinic', 'hospital']
     };
 
     service.nearbySearch(request, (results, status)=>{
