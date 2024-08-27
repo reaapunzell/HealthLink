@@ -44,17 +44,18 @@ profileSelect.dispatchEvent(new Event('change'));
   async function initMap() {
     // Load the Google Maps library
     const { Map } = await google.maps.importLibrary("maps");
+    const { places } = await google.maps.importLibrary("places");
   
     // Default map center (in case geolocation fails)
-    const defaultCenter = { lat: -26.199, lng: 28.047 };
-    
+    const defaultCenter = { lat: -26.073073506861217, lng: 28.13038136763553 };
+  
     // Initialize the map with a default center
     map = new Map(document.getElementById("map"), {
       center: defaultCenter,
-      zoom: 18,
+      zoom: 14,
     });
   
-    // Try to use HTML5 Geolocation
+    // HTML5 Geolocation
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -63,6 +64,9 @@ profileSelect.dispatchEvent(new Event('change'));
             lng: position.coords.longitude,
           };
           map.setCenter(pos);
+
+          // call function to find nearby clinics and hospitals
+          findNearbyPlaces(pos);
         },
         () => {
           // Handle location error (user denied or error occurred)
@@ -75,6 +79,42 @@ profileSelect.dispatchEvent(new Event('change'));
     }
   }
   
+  //Function to find nearby clinics and hospitals
+  function findNearbyPlaces(location){
+    const service = new google.maps.places.PlacesService(map);
+    const request = {
+      location: location,
+      radius: '5000',
+      type: ['hospital', 'clinic', 'doctor'],
+      keyword: 'clinic',
+    };
+
+    service.nearbySearch(request, (results, status)=>{
+      if(status === google.maps.places.PlacesServiceStatus.OK){
+        for (let i = 0; i< results.length; i++){
+          createMarker(results[i]);
+        }
+      }else{
+        console.error("PlacesService failed due to: " + status);
+      }
+    });
+  }
+  
+  function createMarker(place) {
+    const marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+      title: place.name,
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+      content: `<strong>${place.name}</strong><br>${place.vicinity}`,
+    });
+  
+    marker.addListener('click', () => {
+      infowindow.open(map, marker);
+    });
+  }
   // Call the initMap function to initialize the map
   initMap();
   
