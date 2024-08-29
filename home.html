@@ -32,7 +32,7 @@
   color: #323743FF;
 
     }
-    .navbar button{
+    .navbar button, .clinic-card button{
         color: #117B34FF;
         background-color: #EEFDF3FF;
         border-style:none;
@@ -162,6 +162,33 @@ margin: 15px 0;
 
 #map{
     height:60vh;
+   
+}
+
+
+.clinic-card{
+    width: 601px;
+    height:156px;
+    border-style:solid;
+    border-color: #F3F4F6FF;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+
+.clinic-card-heading{
+    display:flex;
+}
+
+.heart-icon{
+    margin-left: 250px;
+}
+
+.clinic-card-location{
+    display:flex;
+}
+
+.clinic-card-appointments{
+    display:flex;
 }
 </style>
 <body>
@@ -221,18 +248,30 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
     <input type="submit" value="Search" class="search-form-button"/>
 </form>
 <button>Use Your Location</button>
+<div class="map-and-clinics">
 <div id="map">
 </div>
-<div class="clinc-card">
-    <h2></h2>
-    <p class="location">Location</p>
-    <p class="times-visited">Times Visited:</p>
+<div class="clinic-card">
+    <div class="clinic-card-heading">
+        <img src="src\images\Clinic Icon.png" alt="clinic icon">
+        <h2>Orchard's Clinic</h2>
+        <img class="heart-icon" src="src\images\heart.svg" alt="heart icon">
+    </div>
+    <div class="clinic-card-location">
+        <img src="src\images\position-marker.svg" alt="location icon">
+        <p class="location">Location</p>
+    </div>
+    <div class="clinic-card-appointments">
+        <img src="src\images\bookmark.svg" alt="bookmark icon">
+        <p class="times-visited">Times Visited:</p>
+        <button>Set Appointments</button>
+    </div>
 </div>
-
+</div>
 </section>
 
 
 
-<script src="index.js" defer></script>
+<script src="src/index.js" defer></script>
 </body>
 </html>
