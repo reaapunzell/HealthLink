@@ -82,8 +82,14 @@ margin: 15px 0;
     }
 
     .left-panel img{
-        width: 668px; 
-        height: 342px; 
+        width: 400px; 
+        height: 200px; 
+        margin-top: 30px;
+    }
+
+    .left-panel p{
+        font-size: 16px;
+        text-align: center;
     }
 
     .navigation-cards{
@@ -93,14 +99,16 @@ margin: 15px 0;
         font-size: 40px; 
   line-height: 48px; 
   font-weight: 700; 
-  color: #171A1FFF
+  color: #171A1FFF;
+  margin-top: 30px;
+  margin-bottom: 50px;
     }
 
     .navigation-cards button{
         border-radius: 8px; /* border-xl */
   border-width: 1px; 
   border-color: #FFFFFFFF;
-  height: 300px;
+  height: 250px;
   background:white;
     }
 
@@ -165,20 +173,31 @@ margin: 15px 0;
    
 }
 
+.clinics-cards{
+    display:flex;
+}
 
 .clinic-card{
     width: 601px;
-    height:156px;
+    height:auto;
     border-style:solid;
     border-color: #F3F4F6FF;
     border-radius: 6px;
     margin-top: 30px;
 }
 
+.clinic-card-name{
+    font-size:20px;
+}
+
 .clinic-card-heading{
     display:flex;
 }
 
+.clinic-card-img{
+    height:40px;
+    width:40px;
+}
 .heart-icon{
     margin-left: 250px;
 }
@@ -196,15 +215,13 @@ margin: 15px 0;
             <ul>
                 <h1>Heathlink</h1>
                 <li><a href="home.html" class="active">Home</a></li>
-                <li><a href="">Educational Portal</a></li>
-                <li><a href="">My Medical Card</a></li>
                 <li><a href="">Settings</a></li> 
                 <button>Book An Appointment</button>  
             </ul>
         </nav>
 <div class="home-container">
     <div class="left-panel">
-<img src="src\images\Image 30.png" alt="">
+<img src="src/images/Health Link Home page img.png" alt="Health Link Logo">
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora optio sequi corrupti reprehenderit illo
 <br>
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, tempor</p>
@@ -241,32 +258,23 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
     <button>Medical History</button>
 </div>
 </section>
+
+
 <section class="clinics-near-me" id="clinics-near-me">
 <h1>Clinics Near Me</h1>
+
 <form class="search-form" id="search-form">
     <input id="search-box" type="text" placeholder="Search"/>
     <input type="submit" value="Search" class="search-form-button"/>
 </form>
+
 <button>Use Your Location</button>
+
 <div class="map-and-clinics">
 <div id="map">
 </div>
-<div class="clinic-card">
-    <div class="clinic-card-heading">
-        <img src="src\images\Clinic Icon.png" alt="clinic icon">
-        <h2>Orchard's Clinic</h2>
-        <img class="heart-icon" src="src\images\heart.svg" alt="heart icon">
+    <div class="clinics-cards">
     </div>
-    <div class="clinic-card-location">
-        <img src="src\images\position-marker.svg" alt="location icon">
-        <p class="location">Location</p>
-    </div>
-    <div class="clinic-card-appointments">
-        <img src="src\images\bookmark.svg" alt="bookmark icon">
-        <p class="times-visited">Times Visited:</p>
-        <button>Set Appointments</button>
-    </div>
-</div>
 </div>
 </section>
 

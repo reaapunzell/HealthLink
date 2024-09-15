@@ -49,13 +49,13 @@ profileSelect.dispatchEvent(new Event('change'));
     // Default map center (in case geolocation fails)
     const defaultCenter = { lat: -26.073073506861217, lng: 28.13038136763553 };
   
-    // Initialize the map with a default center
+    // Initialize the map with a mapId (required for AdvancedMarkerElement)
     map = new Map(document.getElementById("map"), {
       center: defaultCenter,
       zoom: 14,
+      mapId: "DEMO_MAP_ID", // Map ID required for advanced markers
     });
   
-    
     // HTML5 Geolocation
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -65,49 +65,59 @@ profileSelect.dispatchEvent(new Event('change'));
             lng: position.coords.longitude,
           };
           map.setCenter(pos);
-
-          // call function to find nearby clinics and hospitals
+  
+          // Call function to find nearby clinics and hospitals
           findNearbyPlaces(pos);
         },
         () => {
-          // Handle location error (user denied or error occurred)
+          // Handle location error
           console.error("Error: The Geolocation service failed or was denied.");
         }
       );
     } else {
-      // Browser doesn't support Geolocation
       console.error("Error: Your browser doesn't support geolocation.");
     }
   }
   
-  //Function to find nearby clinics and hospitals
-  function findNearbyPlaces(location){
+  // Function to find nearby clinics and hospitals
+  function findNearbyPlaces(location) {
     const service = new google.maps.places.PlacesService(map);
     const request = {
       location: location,
       radius: '5000',
       type: ['hospital', 'clinic', 'doctor'],
-      keyword: ['clinic', 'hospital']
+      keyword: ['clinic', 'hospital'],
     };
+  
+    service.nearbySearch(request, (results, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        const mapAndClinics = document.querySelector('.map-and-clinics');
 
-    service.nearbySearch(request, (results, status)=>{
-      if(status === google.maps.places.PlacesServiceStatus.OK){
-        for (let i = 0; i< results.length; i++){
+        for (let i = 0; i < 5; i++) {
           createMarker(results[i]);
+          console.log(results[i].name);
+        
+          const clinicCard = createClinicElement(results[i]);
+          mapAndClinics.appendChild(clinicCard);
         }
-      }else{
+      } else {
         console.error("PlacesService failed due to: " + status);
       }
     });
   }
-  
-  function createMarker(place) {
-    const marker = new google.maps.Marker({
+    
+  //Create Markers and Nearby Clinic cards
+  async function createMarker(place) {
+    
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+
+    const marker = new google.maps.marker.AdvancedMarkerElement({
       map: map,
       position: place.geometry.location,
       title: place.name,
     });
-
+  
     const infowindow = new google.maps.InfoWindow({
       content: `<strong>${place.name}</strong><br>${place.vicinity}`,
     });
@@ -115,7 +125,36 @@ profileSelect.dispatchEvent(new Event('change'));
     marker.addListener('click', () => {
       infowindow.open(map, marker);
     });
-  }
-  // Call the initMap function to initialize the map
+
+    }
+
+    const createClinicElement = (place) => {
+      const clinicCard = document.createElement("div");
+      clinicCard.classList.add('clinic-card');
+    
+      // Create the clinic card structure
+      clinicCard.innerHTML = `
+        <div class="clinic-card-heading">
+          <img src="src/images/Clinic Icon.png" alt="clinic icon">
+          <h2 class="clinic-card-name">${place.name}</h2>
+        </div>
+        <div class="clinic-card-location">
+          <img src="src/images/position-marker.svg" alt="location icon">
+          <p class="location">${place.vicinity}</p>
+        </div>
+        <div class="clinic-card-appointments">
+          <img src="src/images/bookmark.svg" alt="bookmark icon">
+          <p class="times-visited">Times Visited:</p>
+          <button>Set Appointment</button>
+        </div>
+      `;
+    
+      return clinicCard;
+    };
+
+  
+    
+  
+  // Initialize the map
   initMap();
   
