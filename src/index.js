@@ -90,7 +90,7 @@ profileSelect.dispatchEvent(new Event('change'));
       location: location,
       radius: '5000',
       type: ['hospital', 'clinic', 'doctor'],
-      keyword: ['clinic', 'hospital'],
+      keyword: ['hospital','clinic' ],
     };
   
     service.nearbySearch(request, (results, status) => {
