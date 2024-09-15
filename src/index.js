@@ -1,4 +1,8 @@
 
+
+
+
+
 const profiles =[
     {
         fullName: "Simba Moyo",
@@ -91,14 +95,13 @@ profileSelect.dispatchEvent(new Event('change'));
   
     service.nearbySearch(request, (results, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        const mapAndClinics = document.querySelector('.map-and-clinics');
+        const clinics = document.querySelector('.clinic-cards');
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
           createMarker(results[i]);
-          console.log(results[i].name);
         
           const clinicCard = createClinicElement(results[i]);
-          mapAndClinics.appendChild(clinicCard);
+          clinics.appendChild(clinicCard);
         }
       } else {
         console.error("PlacesService failed due to: " + status);

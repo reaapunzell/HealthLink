@@ -168,13 +168,24 @@ margin: 15px 0;
         font-size: 20px;
 }
 
-#map{
-    height:60vh;
-   
+.map-and-clinics{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
 }
 
-.clinics-cards{
+
+#map{
+    flex:1;
+    height:600px;
+    width:500px;
+    margin-left: 20px;
+}
+
+.clinic-cards{
+    flex:1;
     display:flex;
+    flex-direction:column;
 }
 
 .clinic-card{
@@ -195,8 +206,8 @@ margin: 15px 0;
 }
 
 .clinic-card-img{
-    height:40px;
-    width:40px;
+    height:30px;
+    width:30px;
 }
 .heart-icon{
     margin-left: 250px;
@@ -271,14 +282,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
 <button>Use Your Location</button>
 
 <div class="map-and-clinics">
-<div id="map">
+    <div id="map"></div>
+    <div class="clinic-cards"></div>
 </div>
-    <div class="clinics-cards">
-    </div>
-</div>
+
 </section>
-
-
 
 <script src="src/index.js" defer></script>
 </body>
