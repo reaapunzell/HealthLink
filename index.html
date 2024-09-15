@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
     <title>Health Link</title>
 </head>
 <style>
@@ -32,7 +33,7 @@
   color: #323743FF;
 
     }
-    .navbar button, .clinic-card button{
+    .navbar button, .clinic-card button {
         color: #117B34FF;
         background-color: #EEFDF3FF;
         border-style:none;
@@ -120,32 +121,37 @@ margin: 15px 0;
     section{
         align-items: center;
     }
-    .my-medical-card{
-        display:flex;
-        flex-direction:column;
-        justify-content: center;;
-    }
+
+.medical-card-section h1{
+    text-align: center;
+}
 
     select {
     width: 526px; 
   height: 91px; 
+  margin: 0px 300px;
   padding-left: 12px; 
   padding-right: 34px;
   font-size: 20px;
   border-color: rgb(202, 202, 202);
 }
 
+
     .medical-card{
-        display:flex;
-        align-items:center;
-        border: 2px solid #aeaeae;
+    display:flex;
+    align-items:center;
+    border: 2px solid #aeaeae;
     padding: 20px;
     border-radius: 10px;
-    width: 1000px;
-    margin-top: 20px;
+    width: auto;
+    margin: 20px 300px;
+    margin-left: 300px;
+    margin-right: 300px;
     font-size: 30px;
     gap:20px;
 }
+
+
 .profile-pic {
     width: 100px;
     height: 100px;
@@ -161,7 +167,7 @@ margin: 15px 0;
         background-color: #94FFA5FF;
         border-style:none;
         margin-top: 20px;
-        margin-left: 200px;
+        margin-left: 300px;
         width: 213px; 
         height: 51px; 
         padding: 0 20px; 
@@ -241,14 +247,14 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
 <button class="know-your-rights-button">Know Your Rights</button>
 </div>
 <div class="navigation-cards">
-    <button class="home-active"><a href="mymedicalcard.html" >My MediCard</a></button>
-    <button> <a href="educationportal.html">Education Portal</a></button>
-    <button><a href="myappointments.html">My Appointments</a></button>
-    <button><a href="clinicsnearme.html" >Clinics Near Me</a></button>
+    <button class="nav-button" data-section="my-medical-card">My MediCard</button>
+    <button class="nav-button" data-section="education-portal-section" >Education Portal</button>
+    <button class="nav-button"data-section="my-appointments-section">My Appointments</button>
+    <button class="nav-button" data-section="clinics-near-me">Clinics Near Me</button>
 </div>
 </div>
 
-<section class="my-medical-card" id="my-medical-card">
+<section class="medical-card-section" id="my-medical-card" style="display:none">
 <h1>My Medical Card</h1>
 <select class="drop-down" id="profileSelect" name="profiles">
     <option value="0">Simba</option>
@@ -271,7 +277,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
 </section>
 
 
-<section class="clinics-near-me" id="clinics-near-me">
+<section class="clinics-near-me" id="clinics-near-me" style="display:none">
 <h1>Clinics Near Me</h1>
 
 <form class="search-form" id="search-form">
@@ -288,6 +294,62 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
 
 </section>
 
+<section class="my-appointments-section" id="my-appointments-section" style="display:none">
+   <h1>My Appointments</h1> 
+    <div class="calendar-container">
+        <header class="calendar-header">
+            <p class="calendar-current-date"></p>
+            <div class="calendar-navigation">
+                <span id="calendar-prev" 
+                      class="material-symbols-rounded">
+                    <
+                </span>
+                <span id="calendar-next" 
+                      class="material-symbols-rounded">
+                    >
+                </span>
+            </div>
+        </header>
+
+        <div class="calendar-body">
+            <ul class="calendar-weekdays">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+            <ul class="calendar-dates"></ul>
+        </div>
+    </div>
+    <button>Set New Appointment</button>
+</section>
+
+<section class="education-portal-section" id="education-portal-section" style="display:block">
+   <h1>Education Portal</h1>
+    <div class="education-portal-container">
+        <div class="education-portal-cards">
+        <div class="education-portal-card">
+            <h2>Visit Department of Home Affairs</h2>
+            <img src="" alt="">
+        </div>
+        <div class="education-portal-card">
+            <h2>Visit Department of Health</h2>
+            <img src="" alt="">
+        </div>
+        <div class="education-portal-card">
+            <h2>Visit Department of Social Development</h2>
+            <img src="" alt="">
+        </div>
+        <div class="education-portal-card">
+            <h2>Know Your Rights</h2>
+            <img src="" alt="">
+        </div>
+    </div>
+    </div>
+</section>
 <script src="src/index.js" defer></script>
 </body>
 </html>
