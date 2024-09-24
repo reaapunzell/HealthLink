@@ -1,5 +1,6 @@
 
 const navigationCards = document.querySelectorAll(".nav-button");
+const settingsButton = document.querySelectorAll(".settings-button");
 const sections = document.querySelectorAll("section");
 
 function hideAllSections(){
@@ -146,31 +147,53 @@ profileSelect.dispatchEvent(new Event('change'));
 
     }
 
-    const createClinicElement = (place) => {
-      const clinicCard = document.createElement("div");
-      clinicCard.classList.add('clinic-card');
-    
-      // Create the clinic card structure
-      clinicCard.innerHTML = `
-        <div class="clinic-card-heading">
-          <img src="src/images/Clinic Icon.png" alt="clinic icon">
-          <h2 class="clinic-card-name">${place.name}</h2>
-        </div>
-        <div class="clinic-card-location">
-          <img src="src/images/position-marker.svg" alt="location icon">
-          <p class="location">${place.vicinity}</p>
-        </div>
-        <div class="clinic-card-appointments">
-          <img src="src/images/bookmark.svg" alt="bookmark icon">
-          <p class="times-visited">Times Visited:</p>
-          <button>Set Appointment</button>
-        </div>
-      `;
-    
-      return clinicCard;
-    };
+   // Function to create clinic cards with the appointment button
+const createClinicElement = (place) => {
+  const clinicCard = document.createElement("div");
+  clinicCard.classList.add('clinic-card');
 
+  // Create the clinic card structure
+  clinicCard.innerHTML = `
+    <div class="clinic-card-heading">
+      <img src="src/images/Clinic Icon.png" alt="clinic icon">
+      <h2 class="clinic-card-name">${place.name}</h2>
+    </div>
+    <div class="clinic-card-location">
+      <img src="src/images/position-marker.svg" alt="location icon">
+      <p class="location">${place.vicinity}</p>
+    </div>
+    <div class="clinic-card-appointments">
+      <img src="src/images/bookmark.svg" alt="bookmark icon">
+      <p class="times-visited">Times Visited:</p>
+      <button class="set-appointment-button">Set Appointment</button>
+    </div>
+  `;
+
+  // Get the appointment button inside the created card
+  const setAppointmentButton = clinicCard.querySelector('.set-appointment-button');
   
+  // Add event listener for setting an appointment
+  setAppointmentButton.addEventListener('click', () => {
+    // Get the clinic name
+    const clinicName = place.name;
+
+    // Prompt the user to enter a date for the appointment
+    const appointmentDate = prompt('Please enter the date for your appointment (DD-MM-YYYY):');
+
+    // Check if the user entered a valid date
+    if (appointmentDate) {
+      // Confirm the booking by showing an alert
+      alert(`Appointment is booked for ${appointmentDate} at ${clinicName}. Check My Appointments to see your appointment date.`);
+    } else {
+      alert('No appointment date entered. Please try again.');
+    }
+  });
+
+  return clinicCard;
+};
+
+
+   
     
   
   // Initialize the map

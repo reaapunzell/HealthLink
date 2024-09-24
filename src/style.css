@@ -4,78 +4,223 @@
   --primary-color: #117B34FF;
   --secondary-color: #94FFA5FF;
 }
-/* * {
-box-sizing: border-box;
+
+button{
+  color: #004E0DFF;
+  background-color: #94FFA5FF;
 }
+    .navbar ul{
+        list-style-type:none;
+        overflow: hidden;
+        display:flex;
+        justify-content: center;
+        gap: 20px;
+    }
 
-body {
-background: #f6f5f7;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-font-family: 'Montserrat', sans-serif;
-height: 100vh;
-margin: -20px 0 50px;
-}
+    .navbar h1{
+        position: absolute; 
+        top: 0px; 
+        left: 20px; 
+        font-size: 32px; 
+        line-height: 48px; 
+        font-weight: 700; 
+        color: #171A1FFF;
+    }
 
+    .navbar li {
+        padding:20px;
+  font-size: 20px; 
+  line-height: 26px; 
+  font-weight: 400; 
+  color: #323743FF;
 
+    }
+    .navbar button, .clinic-card button {
+        border-style:none;
+        margin-left: 200px;
+        width: 213px; 
+        height: 51px; 
+        padding: 0 20px; 
+    }
 
-h1 {
-font-weight: bold;
-margin: 0;
-}
-
-h2 {
-text-align: center;
-}
-
-p {
-font-size: 14px;
-font-weight: 100;
-line-height: 20px;
-letter-spacing: 0.5px;
-margin: 20px 0 30px;
-}
-
-span {
-font-size: 12px;
-}
-
-a {
-color: #333;
-font-size: 14px;
+    a{
+        color: #333;
+font-size: 17px;
 text-decoration: none;
 margin: 15px 0;
+    }
+
+    .active{
+        color:#6BD3A8FF;
+    }
+
+    .home-container{
+        display:flex;
+        justify-content: space-evenly;
+        background-color: rgba(228, 228, 228, 0.183);
+        font-size: 30px;
+    }
+
+    .left-panel{
+        display:flex;
+        flex-direction: column;
+        align-items:center
+    }
+
+    .left-panel button{
+        width: 227px; 
+  height: 57px; 
+    font-size: 19px; 
+  line-height: 31px; 
+  font-weight: 700; 
+  color: #82A6A8FF; 
+  background: #FEFEFEFF; 
+  opacity: 1; 
+  border-style: solid;
+  border-radius: 3px;
+  border-color:#CCDBDCFF ;
+  margin-top: 20px;
+    }
+
+    .left-panel img{
+        width: 400px; 
+        height: 200px; 
+        margin-top: 30px;
+    }
+
+    .left-panel p{
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .navigation-cards{
+        display:grid;
+        grid-template-columns: 10em 10em;
+        gap:10px;
+        font-size: 40px; 
+  line-height: 48px; 
+  font-weight: 700; 
+  color: #171A1FFF;
+  margin-top: 30px;
+  margin-bottom: 50px;
+    }
+
+    .navigation-cards button{
+        border-radius: 8px; /* border-xl */
+  border-width: 1px; 
+  border-color: #FFFFFFFF;
+  height: 250px;
+  background:white;
+    }
+
+    section{
+        align-items: center;
+    }
+
+.medical-card-section h1{
+    text-align: center;
 }
 
-button {
-border-radius: 20px;
-border: 1px solid #24F29DFF;
-background-color: #24F29DFF;
-color: #FFFFFF;
-font-size: 12px;
-font-weight: bold;
-padding: 12px 45px;
-letter-spacing: 1px;
-text-transform: uppercase;
-transition: transform 80ms ease-in;
+    select {
+    width: 526px; 
+  height: 91px; 
+  margin: 0px 300px;
+  padding-left: 12px; 
+  padding-right: 34px;
+  font-size: 20px;
+  border-color: rgb(202, 202, 202);
 }
 
-button:active {
-transform: scale(0.95);
+
+    .medical-card{
+    display:flex;
+    align-items:center;
+    border: 2px solid #aeaeae;
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+    margin: 20px 300px;
+    margin-left: 300px;
+    margin-right: 300px;
+    font-size: 30px;
+    gap:20px;
 }
 
-button:focus {
-outline: none;
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
 }
 
-button.ghost {
-background-color: transparent;
-border-color: #FFFFFF;
-} */
+.medical-card-navigation{
+    display:flex;
+}
+.medical-card-navigation button{
+    color: #004E0DFF;
+        background-color: #94FFA5FF;
+        border-style:none;
+        margin-top: 20px;
+        margin-left: 300px;
+        width: 213px; 
+        height: 51px; 
+        padding: 0 20px; 
+        font-size: 20px;
+}
+
+.map-and-clinics{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+}
 
 
+#map{
+    flex:1;
+    height:600px;
+    width:500px;
+    margin-left: 20px;
+}
+
+.clinic-cards{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.clinic-card{
+    width: 601px;
+    height:auto;
+    border-style:solid;
+    border-color: #F3F4F6FF;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+
+.clinic-card-name{
+    font-size:20px;
+}
+
+.clinic-card-heading{
+    display:flex;
+}
+
+.clinic-card-img{
+    height:30px;
+    width:30px;
+}
+.heart-icon{
+    margin-left: 250px;
+}
+
+.clinic-card-location{
+    display:flex;
+}
+
+.clinic-card-appointments{
+    display:flex;
+}
 
 form {
 background-color: #FFFFFF;
@@ -384,4 +529,41 @@ header .calendar-current-date {
 education-portal-card{
   border-color: gray;
   border-width: 1px;
+}
+
+.settings-section {
+  margin: 30px 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.settings-category {
+  margin-bottom: 20px;
+}
+
+.settings-category h2 {
+  font-size: 24px;
+  color: #171A1FFF;
+  margin-bottom: 10px;
+}
+
+.settings-category button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  color: #004E0DFF;
+  background-color: #94FFA5FF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settings-category input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+.settings-category select {
+  padding: 5px;
+  font-size: 14px;
+  margin-top: 10px;
 }

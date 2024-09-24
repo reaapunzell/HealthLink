@@ -6,242 +6,21 @@
     <link rel="stylesheet" href="src/style.css">
     <title>Health Link</title>
 </head>
-<style>
-    .navbar ul{
-        list-style-type:none;
-        overflow: hidden;
-        display:flex;
-        justify-content: center;
-        gap: 20px;
-    }
 
-    .navbar h1{
-        position: absolute; 
-        top: 0px; 
-        left: 20px; 
-        font-size: 32px; 
-        line-height: 48px; 
-        font-weight: 700; 
-        color: #171A1FFF;
-    }
-
-    .navbar li {
-        padding:20px;
-  font-size: 20px; 
-  line-height: 26px; 
-  font-weight: 400; 
-  color: #323743FF;
-
-    }
-    .navbar button, .clinic-card button {
-        color: #117B34FF;
-        background-color: #EEFDF3FF;
-        border-style:none;
-        margin-left: 200px;
-        width: 213px; 
-        height: 51px; 
-        padding: 0 20px; 
-    }
-
-    a{
-        color: #333;
-font-size: 17px;
-text-decoration: none;
-margin: 15px 0;
-    }
-
-    .active{
-        color:#6BD3A8FF;
-    }
-
-    .home-container{
-        display:flex;
-        justify-content: space-evenly;
-        background-color: rgba(228, 228, 228, 0.183);
-        font-size: 30px;
-    }
-
-    .left-panel{
-        display:flex;
-        flex-direction: column;
-        align-items:center
-    }
-
-    .left-panel button{
-        width: 227px; 
-  height: 57px; 
-    font-size: 19px; 
-  line-height: 31px; 
-  font-weight: 700; 
-  color: #82A6A8FF; 
-  background: #FEFEFEFF; 
-  opacity: 1; 
-  border-style: solid;
-  border-radius: 3px;
-  border-color:#CCDBDCFF ;
-  margin-top: 20px;
-    }
-
-    .left-panel img{
-        width: 400px; 
-        height: 200px; 
-        margin-top: 30px;
-    }
-
-    .left-panel p{
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .navigation-cards{
-        display:grid;
-        grid-template-columns: 10em 10em;
-        gap:10px;
-        font-size: 40px; 
-  line-height: 48px; 
-  font-weight: 700; 
-  color: #171A1FFF;
-  margin-top: 30px;
-  margin-bottom: 50px;
-    }
-
-    .navigation-cards button{
-        border-radius: 8px; /* border-xl */
-  border-width: 1px; 
-  border-color: #FFFFFFFF;
-  height: 250px;
-  background:white;
-    }
-
-.home-active{
-    background-color: red;
-    color:red;
-}
-
-    section{
-        align-items: center;
-    }
-
-.medical-card-section h1{
-    text-align: center;
-}
-
-    select {
-    width: 526px; 
-  height: 91px; 
-  margin: 0px 300px;
-  padding-left: 12px; 
-  padding-right: 34px;
-  font-size: 20px;
-  border-color: rgb(202, 202, 202);
-}
-
-
-    .medical-card{
-    display:flex;
-    align-items:center;
-    border: 2px solid #aeaeae;
-    padding: 20px;
-    border-radius: 10px;
-    width: auto;
-    margin: 20px 300px;
-    margin-left: 300px;
-    margin-right: 300px;
-    font-size: 30px;
-    gap:20px;
-}
-
-
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.medical-card-navigation{
-    display:flex;
-}
-.medical-card-navigation button{
-    color: #004E0DFF;
-        background-color: #94FFA5FF;
-        border-style:none;
-        margin-top: 20px;
-        margin-left: 300px;
-        width: 213px; 
-        height: 51px; 
-        padding: 0 20px; 
-        font-size: 20px;
-}
-
-.map-and-clinics{
-    display:flex;
-    align-items:flex-start;
-    gap:20px;
-}
-
-
-#map{
-    flex:1;
-    height:600px;
-    width:500px;
-    margin-left: 20px;
-}
-
-.clinic-cards{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-}
-
-.clinic-card{
-    width: 601px;
-    height:auto;
-    border-style:solid;
-    border-color: #F3F4F6FF;
-    border-radius: 6px;
-    margin-top: 30px;
-}
-
-.clinic-card-name{
-    font-size:20px;
-}
-
-.clinic-card-heading{
-    display:flex;
-}
-
-.clinic-card-img{
-    height:30px;
-    width:30px;
-}
-.heart-icon{
-    margin-left: 250px;
-}
-
-.clinic-card-location{
-    display:flex;
-}
-
-.clinic-card-appointments{
-    display:flex;
-}
-</style>
 <body>
         <nav class="navbar">
             <ul>
                 <h1>Heathlink</h1>
-                <li><a href="home.html" class="active">Home</a></li>
-                <li><a href="">Settings</a></li> 
+                <li><a href="index.html" class="active">Home</a></li>
+                <button class="nav-button" data-section="settings-section">Settings</button>
                 <button>Book An Appointment</button>  
             </ul>
         </nav>
 <div class="home-container">
     <div class="left-panel">
 <img src="src/images/Health Link Home page img.png" alt="Health Link Logo">
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora optio sequi corrupti reprehenderit illo
-<br>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, tempor</p>
+<p>Establishing a trusted, interoperable digital health records infrastructure allows African countries to empower patients, improve continuity of care, and make progress towards universal access to quality healthcare services for all citizens and residents, regardless of their location or socioeconomic status.
+
 <button class="health-hotline-button">Health Hotline</button>
 <br>
 <button class="know-your-rights-button">Know Your Rights</button>
@@ -279,13 +58,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
 
 <section class="clinics-near-me" id="clinics-near-me" style="display:none">
 <h1>Clinics Near Me</h1>
-
-<form class="search-form" id="search-form">
-    <input id="search-box" type="text" placeholder="Search"/>
-    <input type="submit" value="Search" class="search-form-button"/>
-</form>
-
-<button>Use Your Location</button>
 
 <div class="map-and-clinics">
     <div id="map"></div>
@@ -350,6 +122,79 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe est, temp
     </div>
     </div>
 </section>
+
+<section class="settings-section" id="settings-section" style="display:none">
+    <h1>Settings</h1>
+
+    <!-- Profile Management -->
+    <div class="settings-category">
+        <h2>Profile Management</h2>
+        <button>Edit Profile</button>
+        <button>Change Password</button>
+        <button>Update Profile Picture</button>
+    </div>
+
+    <!-- Theme Customization -->
+    <div class="settings-category">
+        <h2>Theme Customization</h2>
+        <label for="theme-toggle">Dark Mode</label>
+        <input type="checkbox" id="theme-toggle">
+        <br>
+        <label for="font-size">Font Size</label>
+        <select id="font-size">
+            <option value="small">Small</option>
+            <option value="medium" selected>Medium</option>
+            <option value="large">Large</option>
+        </select>
+    </div>
+
+    <!-- Language Settings -->
+    <div class="settings-category">
+        <h2>Language Settings</h2>
+        <select id="language-select">
+            <option value="en" selected>English</option>
+            <option value="fr">French</option>
+            <option value="sw">Swahili</option>
+        </select>
+    </div>
+
+    <!-- Notification Settings -->
+    <div class="settings-category">
+        <h2>Notification Settings</h2>
+        <label>
+            <input type="checkbox" id="appointment-reminders"> Appointment Reminders
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="record-updates"> Health Record Updates
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="newsletter-subscriptions"> Newsletter Subscriptions
+        </label>
+    </div>
+
+    <!-- Security Settings -->
+    <div class="settings-category">
+        <h2>Security Settings</h2>
+        <button>Enable Two-Factor Authentication</button>
+        <button>Manage Privacy Controls</button>
+    </div>
+
+    <!-- Account Settings -->
+    <div class="settings-category">
+        <h2>Account Settings</h2>
+        <button>Deactivate Account</button>
+        <button>Log Out of All Devices</button>
+    </div>
+
+    <!-- Data Export -->
+    <div class="settings-category">
+        <h2>Data Export</h2>
+        <button>Download Medical Records</button>
+    </div>
+</section>
+
 <script src="src/index.js" defer></script>
 </body>
 </html>
