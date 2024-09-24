@@ -497,6 +497,12 @@ header .calendar-current-date {
   background: var(--secondary-color);
 }
 
+li.appointment {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 8px;
+}
+
 .my-appointments-section button{
   background: var(--secondary-color);
   color: var(--primary-color);
@@ -567,3 +573,5 @@ education-portal-card{
   font-size: 14px;
   margin-top: 10px;
 }
+
+
