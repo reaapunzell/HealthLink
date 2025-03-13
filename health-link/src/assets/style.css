@@ -159,10 +159,14 @@ h2 {
   font-weight: bold;
 }
 
-
-.medical-card-section h1{
-  text-align: center;
+.nav-icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle
 }
+
+
 
   select {
   width: 526px; 

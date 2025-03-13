@@ -1,8 +1,12 @@
 import React from "react";
+import Navigation from "./Navigation";
 
 function MediCard() {
   return (
-    <div>
+    <div className="app-container">
+      <Navigation />
+
+      <div className="medi-card-container">
       <h1>My Medical Card</h1>
       <select className="drop-down" id="profileSelect" name="profiles">
         <option value="0">Simba</option>
@@ -33,6 +37,7 @@ function MediCard() {
       <div className="medical-card-navigation">
         <button>Documents</button>
         <button>Medical History</button>
+      </div>
       </div>
     </div>
   );

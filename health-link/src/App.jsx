@@ -4,7 +4,7 @@ import Signup from "./pages/Signup";
 import Navigation from "./components/Navigation";
 import MediCard from "./components/MediCard";
 import AppointmentCalendar from "./components/AppointmentCalendar";
-
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path='/navigation' element={<Navigation />} />
         <Route path='/medicard' element={<MediCard />} />
         <Route path='/appointments' element={<AppointmentCalendar />} />
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

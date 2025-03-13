@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "/src/assets/style.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from "/src/assets/Healthlink-logo.svg";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -114,7 +115,7 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <img src="/CooCoo Main logo.svg" alt="CooCoo Logo" />
+      <img src={logo} alt="Health Link Logo" />
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         {/* First Name */}
