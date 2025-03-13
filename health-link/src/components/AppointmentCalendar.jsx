@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
+import Navigation from './Navigation';
 
 function AppointmentCalendar() {
     const [appointmentDates, setAppointmentDates] = useState([]);
@@ -57,7 +58,8 @@ const months = [
 
 return (
 
-  <div>
+  <div className="app-container">
+    <Navigation />
    <h1>My Appointments</h1> 
     <div className="calendar-container">
         <header className="calendar-header">
