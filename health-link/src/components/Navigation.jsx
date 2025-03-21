@@ -7,7 +7,6 @@ function Navigation () {
     return (
         <div className="navigation-bar">
             <img src={logo} />
-            <h3>Health Link </h3>
             <Nav defaultActiveKey="/dashboard" className="nav-links">
             <Nav.Link href='/dashboard'><img src="/src/assets/home-icon.svg" alt="Dashboard" className="nav-icon" />Dashboard</Nav.Link>
             <Nav.Link href="/medicard"><img src="/src/assets/person-icon.svg" alt="medicard-icon" className="nav-icon" />MediCard</Nav.Link>
