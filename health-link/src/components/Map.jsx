@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import "/src/assets/style.css";
 
 const Map = () => {
   const mapRef = useRef(null); // Reference to the map container
   const mapInstance = useRef(null); // Reference to the Leaflet map instance
+  const clinicsContainerRef = useRef(null); // Reference to the clinics container
+  const [clinics, setClinics] = useState([]);
 
   useEffect(() => {
     if (!mapRef.current || mapInstance.current) return; // Prevent multiple initializations
@@ -27,7 +30,7 @@ const Map = () => {
         (position) => {
           const { latitude, longitude } = position.coords;
           mapInstance.current.setView([latitude, longitude], 14);
-          console.log(position.coords);
+
           // Add marker for user's location
           L.marker([latitude, longitude])
             .addTo(mapInstance.current)
@@ -52,49 +55,56 @@ const Map = () => {
 
   // Function to fetch nearby hospitals and clinics using OpenStreetMap Nominatim API
   const fetchNearbyPlaces = async (lat, lon, map) => {
-    console.log("fetching nearby places");
-
     try {
       const response = await fetch(
         `https://nominatim.openstreetmap.org/search.php?q=hospital+${lat}+${lon}&accept-language=en-US%2Cen&format=jsonv2`
       );
       const data = await response.json();
 
-      const clinicsContainer = document.querySelector(".clinic-cards");
-      clinicsContainer.innerHTML = "";
+      const limitedClinics = data.slice(0, 3);
 
-      data.forEach((place) => {
+      setClinics(limitedClinics); // Update state with fetched clinics
+
+      limitedClinics.forEach((place) => {
         console.log(place);
-        L.marker([place.lat, place.lon])
-          .addTo(map)
-          .bindPopup(`<b>${place.display_name}</b>`);
+        // Add marker for each place
+        L.marker([place.lat, place.lon]).addTo(map).b;
       });
     } catch (error) {
       console.error("Error fetching nearby places:", error);
     }
   };
 
-  const createClinicElement = (place) => {
-    const div = document.createElement("div");
-    div.className = "clinic-card";
-    div.innerHTML = `
-<h2>${place.tags.name}</h2>
-<p>Type: ${place.tags.amenity}</p>
-<p>Location: ${place.lat}, ${place.lon}</p>
-`;
-    return div;
-  };
   return (
-    <>
-      <div
-        ref={mapRef}
-        id="map"
-        style={{ height: "500px", width: "100%" }}
-      ></div>
-      <div className="clinic-cards">
+    <div className="map-clinic-container">
+      <div ref={mapRef} id="map"></div>
+      <div className="nearby-clinics">
         <h1>Nearby Clinics & Hospitals</h1>
+        <div className="clinic-cards">
+          {clinics.map((place) => (
+            <div key={place.place_id} className="clinic-card">
+              <div className="clinic-card-heading">
+                <img src="src/assets/Clinic Icon.png" alt="clinic-icon" />
+                <h2 className="clinic-card-name">{place.display_name}</h2>
+              </div>
+              <div className="clinic-card-location">
+                <img src="src/assets/position-marker.svg" alt="location icon" />
+                <p className="location">
+                  {place.lat}, {place.lon}
+                </p>
+              </div>
+              <div className="clinic-card-appointments">
+                <img src="src/assets/bookmark.svg" alt="bookmark icon" />
+                <p className="times-visited">Times Visited:</p>
+                <button className="set-appointment-button">
+                  Set Appointment
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

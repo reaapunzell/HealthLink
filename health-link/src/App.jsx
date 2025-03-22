@@ -6,6 +6,7 @@ import MediCard from "./components/MediCard";
 import AppointmentCalendar from "./components/AppointmentCalendar";
 import Dashboard from "./pages/Dashboard";
 import Map from "./components/Map";
+import Clinics from "./pages/Clinics";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/appointments" element={<AppointmentCalendar />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/clinics" element={<Clinics />} />
       </Routes>
     </BrowserRouter>
   );
