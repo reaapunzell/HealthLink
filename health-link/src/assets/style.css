@@ -76,6 +76,12 @@ button {
   font-size: 16px;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .login-btn:hover,
 .signup-btn:hover,
 .guest-btn:hover {
@@ -345,6 +351,8 @@ li.appointment {
   display: flex;
   gap: 20px;
   padding: 20px;
+  margin-top: 15vh;
+  z-index: 1;
 }
 
 .map-clinic-container h1 {
