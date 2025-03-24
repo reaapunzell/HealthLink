@@ -4,6 +4,7 @@ import "/src/assets/style.css";
 import Navigation from "../components/Navigation";
 import NextAppointment from "../components/NextAppointment";
 import Welcome from "../components/Welcome";
+import Info from "../components/Info";
 
 const Dashboard = () => {
   return (
@@ -12,6 +13,10 @@ const Dashboard = () => {
 
       <div>
         <Welcome />
+      </div>
+
+      <div>
+        <Info />
       </div>
 
       <div>
