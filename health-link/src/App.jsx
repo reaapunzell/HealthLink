@@ -5,6 +5,8 @@ import Navigation from "./components/Navigation";
 import MediCard from "./components/MediCard";
 import AppointmentCalendar from "./components/AppointmentCalendar";
 import Dashboard from "./pages/Dashboard";
+import Map from "./components/Map";
+import Clinics from "./pages/Clinics";
 
 function App() {
   return (
@@ -13,10 +15,12 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path='/navigation' element={<Navigation />} />
-        <Route path='/medicard' element={<MediCard />} />
-        <Route path='/appointments' element={<AppointmentCalendar />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path="/navigation" element={<Navigation />} />
+        <Route path="/medicard" element={<MediCard />} />
+        <Route path="/appointments" element={<AppointmentCalendar />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/clinics" element={<Clinics />} />
       </Routes>
     </BrowserRouter>
   );
