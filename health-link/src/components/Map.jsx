@@ -2,12 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "/src/assets/style.css";
+import { useNavigate } from "react-router-dom";
 
 const Map = () => {
   const mapRef = useRef(null); // Reference to the map container
   const mapInstance = useRef(null); // Reference to the Leaflet map instance
   const clinicsContainerRef = useRef(null); // Reference to the clinics container
   const [clinics, setClinics] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!mapRef.current || mapInstance.current) return; // Prevent multiple initializations
@@ -75,6 +77,11 @@ const Map = () => {
     }
   };
 
+  //Handle set appointment button
+  const handleSetAppointment = (clinic) => {
+    navigate("/appointments", { state: { clinic } });
+  };
+
   return (
     <div className="map-clinic-container">
       <div ref={mapRef} id="map"></div>
@@ -96,7 +103,10 @@ const Map = () => {
               <div className="clinic-card-appointments">
                 <img src="src/assets/bookmark.svg" alt="bookmark icon" />
                 <p className="times-visited">Times Visited:</p>
-                <button className="set-appointment-button">
+                <button
+                  className="set-appointment-button"
+                  onClick={() => handleSetAppointment(place)}
+                >
                   Set Appointment
                 </button>
               </div>

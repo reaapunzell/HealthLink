@@ -76,12 +76,6 @@ button {
   font-size: 16px;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .login-btn:hover,
 .signup-btn:hover,
 .guest-btn:hover {
@@ -335,6 +329,19 @@ li.appointment {
   background-color: var(--secondary-color);
   color: white;
   border-radius: 8px;
+}
+
+.time-selection {
+  margin: 20px 0;
+}
+
+.time-selection label {
+  margin-right: 10px;
+}
+
+.time-selection input {
+  padding: 5px;
+  font-size: 1rem;
 }
 
 .my-appointments-section button {
