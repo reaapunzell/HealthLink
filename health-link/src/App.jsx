@@ -3,7 +3,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navigation from "./components/Navigation";
 import MediCard from "./components/MediCard";
-import AppointmentCalendar from "./components/AppointmentCalendar";
+import BookAppointment from "./components/BookAppointment";
 import Dashboard from "./pages/Dashboard";
 import Map from "./components/Map";
 import Clinics from "./pages/Clinics";
@@ -17,7 +17,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/navigation" element={<Navigation />} />
         <Route path="/medicard" element={<MediCard />} />
-        <Route path="/appointments" element={<AppointmentCalendar />} />
+        <Route path="/bookappointment" element={<BookAppointment />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/map" element={<Map />} />
         <Route path="/clinics" element={<Clinics />} />

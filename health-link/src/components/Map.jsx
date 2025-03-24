@@ -79,7 +79,7 @@ const Map = () => {
 
   //Handle set appointment button
   const handleSetAppointment = (clinic) => {
-    navigate("/appointments", { state: { clinic } });
+    navigate("/bookappointment", { state: { clinic } });
   };
 
   return (

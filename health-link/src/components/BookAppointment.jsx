@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 
-function AppointmentCalendar() {
+function BookAppointment() {
   const location = useLocation();
   const { clinic } = location.state || {}; // Retrieve the selected clinic's data
 
@@ -216,4 +216,4 @@ function AppointmentCalendar() {
   );
 }
 
-export default AppointmentCalendar;
+export default BookAppointment;
