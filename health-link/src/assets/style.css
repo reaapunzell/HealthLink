@@ -512,3 +512,24 @@ li.appointment {
   margin: 0px;
   text-align: left;
 }
+
+.dashboard-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "main" "footer";
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.welcome-component {
+  grid-area: main;
+  padding: 1.5 rem;
+  display: grid;
+}
+
+.dashboard-cards-container {
+  display: grid;
+}

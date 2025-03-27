@@ -11,16 +11,23 @@ const Dashboard = () => {
     <div className="app-container">
       <Navigation />
 
-      <div>
-        <Welcome />
-      </div>
+      <div className="dashboard-container">
+        <div className="dashboard-main">
+          <div className="welcome-component">
+            <Welcome />
+          </div>
 
-      <div>
-        <Info />
-      </div>
+          <div className="info-component">
+            <Info />
+          </div>
+        </div>
 
-      <div>
-        <NextAppointment />
+        <div className="dashboard-cards-container">
+          <div>
+            <NextAppointment />
+          </div>
+          \
+        </div>
       </div>
     </div>
   );
