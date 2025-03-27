@@ -7,6 +7,7 @@ import BookAppointment from "./components/BookAppointment";
 import Dashboard from "./pages/Dashboard";
 import Map from "./components/Map";
 import Clinics from "./pages/Clinics";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/map" element={<Map />} />
         <Route path="/clinics" element={<Clinics />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );
