@@ -10,7 +10,10 @@ const Posts = () => {
         <div className="post-card">
           <span className="post-date">27 Feb 2025</span>
           <div className="post-title-image">
-            <span className="post-title">Anemia Awareness</span>
+            <span className="post-title">
+              Living light: the minimalist lifestyle and its environmental
+              impact
+            </span>
             <img />
           </div>
         </div>

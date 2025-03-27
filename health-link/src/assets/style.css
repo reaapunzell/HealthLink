@@ -558,7 +558,8 @@ li.appointment {
 .post-card {
   background-color: white;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1rem;
+  height: 8rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -575,9 +576,6 @@ li.appointment {
 .post-title-image {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: 50vh;
-  height: 20vh;
 }
 
 .post-title {
@@ -589,8 +587,8 @@ li.appointment {
 }
 
 .post-title-image img {
-  width: 80px;
-  height: 80px;
+  width: 8rem;
+  height: 5rem;
   border-radius: 8px;
   object-fit: cover;
   background: #e2e8f0; /* Placeholder color */
@@ -611,4 +609,16 @@ li.appointment {
   background-color: var(--secondary-color);
   border: var(--secondary-color);
   color: white;
+}
+
+.blog-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5t rem;
+}
+
+.blog-header-img img {
+  width: 100%;
+  height: 20rem;
 }
