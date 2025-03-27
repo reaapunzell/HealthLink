@@ -31,13 +31,13 @@ function Navigation() {
           />
           Clinics
         </Nav.Link>
-        <Nav.Link href="/education">
+        <Nav.Link href="/blog">
           <img
             src="/src/assets/book-icon.svg"
             alt="book-icon"
             className="nav-icon"
           />
-          Education
+          Blog
         </Nav.Link>
         <Nav.Link href="/settings">
           <img
