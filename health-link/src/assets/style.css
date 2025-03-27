@@ -3,6 +3,8 @@
 :root {
   --primary-color: #117b34ff;
   --secondary-color: #94ffa5ff;
+  --card-background-color: #dfffe1;
+  --card-text-color: #0bc577;
 }
 
 * {
@@ -47,6 +49,7 @@
 
 h2 {
   text-align: center;
+  font-size: 30px;
 }
 
 img {
@@ -79,6 +82,13 @@ button {
   border: none;
   border-radius: 4px;
   font-size: 16px;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+button:focus {
+  outline: none;
 }
 
 .login-btn:hover,
@@ -429,4 +439,76 @@ li.appointment {
 
 .clinic-card-appointments {
   display: flex;
+}
+
+.next-appointment-container {
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  width: 60vh;
+}
+
+.next-appointment-container h3 {
+  color: var(--card-text-color);
+  margin: 1vh;
+}
+
+.next-appointment-clinic,
+.next-appointment-time,
+.next-appointment-date {
+  display: flex;
+  align-items: center;
+}
+
+.next-appointment-doctor {
+  display: flex;
+  align-items: center;
+  border-radius: 35px;
+  width: 80%;
+  background-color: var(--card-text-color);
+  padding: 1vh;
+}
+
+.next-appointment-doctor img,
+.next-appointment-clinic img,
+.next-appointment-time img,
+.next-appointment-date img {
+  height: 2vh;
+  width: 5vh;
+  margin: 0px;
+}
+
+.next-appointment-doctor p {
+  margin: 0px;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-container h1,
+.welcome-container h2 {
+  text-align: left;
+  margin-left: 2vh;
+}
+.welcome-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.welcome-buttons button {
+  width: 20vh;
+  margin: 2vh;
+  font-size: 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.info-image {
+  margin: 0px;
+  text-align: left;
 }
