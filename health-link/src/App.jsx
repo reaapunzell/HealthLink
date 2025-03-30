@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Map from "./components/Map";
 import Clinics from "./pages/Clinics";
 import Blog from "./pages/Blog";
+import BasicDateCalendar from "./components/Calendar";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/map" element={<Map />} />
         <Route path="/clinics" element={<Clinics />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/calendar" element={<BasicDateCalendar />} />
       </Routes>
     </BrowserRouter>
   );
