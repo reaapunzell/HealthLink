@@ -7,7 +7,19 @@ import calendarIcon from "/src/assets/calendar-icon.svg";
 
 const NextAppointment = () => {
   return (
-    <>
+    <div>
+      <h3> Appointments</h3>
+      <div className="upcoming-complete-btns">
+        <button className="upcoming-btn" type="button">
+          Upcoming
+        </button>
+        <button className="complete-btn" type="button">
+          Complete
+        </button>
+      </div>
+      <div className="add-appointment-btn">
+        <button type="button"> Add Appointment</button>
+      </div>
       <div className="next-appointment-container">
         <h3>Next Appointment</h3>
 
@@ -31,7 +43,7 @@ const NextAppointment = () => {
           <p> Dr Sandile Mashaba</p>{" "}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default NextAppointment;

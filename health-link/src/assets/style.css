@@ -481,6 +481,22 @@ li.appointment {
   margin: 0px;
 }
 
+.upcoming-complete-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 20vh;
+  margin: 5vh;
+}
+
+.upcoming-btn,
+.complete-btn {
+  margin-left: 5vh;
+}
+
+.add-appointment-btn {
+  width: 20vh;
+}
+
 .welcome-container {
   display: flex;
   flex-direction: column;

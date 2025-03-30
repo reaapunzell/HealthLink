@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import NextAppointment from "../components/NextAppointment";
 import Welcome from "../components/Welcome";
 import Info from "../components/Info";
+import BasicDateCalendar from "../components/Calendar";
 
 const Dashboard = () => {
   return (
@@ -26,7 +27,6 @@ const Dashboard = () => {
           <div>
             <NextAppointment />
           </div>
-          \
         </div>
       </div>
     </div>
