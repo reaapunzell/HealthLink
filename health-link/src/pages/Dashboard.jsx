@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation";
 import NextAppointment from "../components/NextAppointment";
 import Welcome from "../components/Welcome";
 import Info from "../components/Info";
-import BasicDateCalendar from "../components/Calendar";
+import MediCard from "../components/MediCard";
 
 const Dashboard = () => {
   return (
@@ -23,11 +23,12 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="dashboard-cards-container">
-          <div>
-            <NextAppointment />
-          </div>
+        <div className="medicard-appointments-container">
+          <MediCard />
+          <NextAppointment />
         </div>
+
+        <div className="dashboard-cards-container"></div>
       </div>
     </div>
   );

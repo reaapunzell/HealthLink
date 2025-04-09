@@ -9,16 +9,10 @@ function MediCard() {
     navigate("/appointments");
   };
   return (
-    <div className="app-container">
-      <Navigation />
-
-      <div className="medi-card-container">
-        <h1>My Medical Card</h1>
-        <select className="drop-down" id="profileSelect" name="profiles">
-          <option value="0">Simba</option>
-          <option value="1">Sarah</option>
-        </select>
-        <div className="medical-card" id="medicalCard">
+    <div className="medi-card-container">
+      <h2>MediCard</h2>
+      <div className="medical-card" id="medicalCard">
+        <div>
           <img
             src="/src/assets/profile.png"
             alt="Profile Picture"
@@ -26,27 +20,28 @@ function MediCard() {
           />
           <div className="medical-card-information">
             <p>
-              Full Name: <span id="fullName"></span>
-            </p>
-            <p>
-              Nationality: <span id="nationality"></span>
-            </p>
-            <p>
-              Age: <span id="age"></span>
-            </p>
-            <p>
-              Gender: <span id="gender"></span>
+              Full Name: <span id="fullName">Simba</span>
             </p>
           </div>
-        </div>
-
-        <div className="medical-card-navigation">
-          <button type="button" onClick={handleAppointmentsButton}>
-            Appointments
-          </button>
-          <button>Medical History</button>
+          <p>
+            Nationality: <span id="nationality">Zimbabwean</span>
+          </p>
+          <p>
+            Age: <span id="age">32</span>
+          </p>
+          <p>
+            Gender: <span id="gender">Male</span>
+          </p>
+          <p>
+            Medical Aid: <span id="medical aid">Gems</span>
+          </p>
+          <p>
+            Diagnosis: <span id="diagnosis">Asthma, Diabetes, Gout</span>
+          </p>
         </div>
       </div>
+
+      <button className="medical-history-btn">Medical History</button>
     </div>
   );
 }
