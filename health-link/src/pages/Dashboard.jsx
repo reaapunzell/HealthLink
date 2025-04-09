@@ -6,6 +6,7 @@ import NextAppointment from "../components/NextAppointment";
 import Welcome from "../components/Welcome";
 import Info from "../components/Info";
 import MediCard from "../components/MediCard";
+import OverviewConditions from "../components/OverviewConditions";
 
 const Dashboard = () => {
   return (
@@ -15,11 +16,7 @@ const Dashboard = () => {
       <div className="dashboard-container">
         <div className="dashboard-main">
           <div className="welcome-component">
-            <Welcome />
-          </div>
-
-          <div className="info-component">
-            <Info />
+            <h2>Hey, Rea! Welcome Back</h2>
           </div>
         </div>
 
@@ -28,7 +25,9 @@ const Dashboard = () => {
           <NextAppointment />
         </div>
 
-        <div className="dashboard-cards-container"></div>
+        <div className="overview-conditions-container">
+          <OverviewConditions />
+        </div>
       </div>
     </div>
   );

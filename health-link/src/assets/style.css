@@ -202,14 +202,14 @@ select {
   text-align: center;
 }
 .medical-card {
-  display: flex;
   align-items: center;
   border: 2px solid #aeaeae;
   padding: 20px;
   border-radius: 10px;
-  width: auto;
-  margin: 10vh 20vh;
-  font-size: auto;
+  width: 80vh;
+  margin: 0 20vh 2vh 20vh;
+
+  font-size: 1rem;
   gap: 20px;
 }
 
@@ -233,6 +233,9 @@ select {
   color: var(--primary-color);
 }
 
+.medical-card-img-names {
+  display: flex;
+}
 .my-appointments-section {
   text-align: center;
 }
@@ -449,10 +452,15 @@ li.appointment {
   display: flex;
 }
 
+.appointments-container h2 {
+  text-align: center;
+  width: auto;
+  margin: 5vh;
+}
+
 .next-appointment-container {
   background-color: var(--card-background-color);
   border-radius: 8px;
-  width: 60vh;
 }
 
 .next-appointment-container h3 {
@@ -491,18 +499,20 @@ li.appointment {
 
 .upcoming-complete-btns {
   display: flex;
-  justify-content: space-between;
-  width: 20vh;
+  width: auto;
+  padding: 2vh;
   margin: 5vh;
 }
 
 .upcoming-btn,
 .complete-btn {
   margin-left: 5vh;
+  font-size: 12px;
 }
 
 .add-appointment-btn {
-  width: 20vh;
+  width: auto;
+  font-size: 12px;
 }
 
 .welcome-container {
@@ -649,4 +659,18 @@ li.appointment {
 
 .medicard-appointments-container {
   display: flex;
+}
+
+.overview-conditions-container {
+  margin-left: 5vh;
+}
+.overview-conditions-cards {
+  width: 40vh;
+
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.card-content {
+  margin-left: 2vh;
 }

@@ -7,7 +7,7 @@ import calendarIcon from "/src/assets/calendar-icon.svg";
 
 const NextAppointment = () => {
   return (
-    <div>
+    <div className="appointments-container">
       <h2> Appointments</h2>
       <div className="upcoming-complete-btns">
         <button className="upcoming-btn" type="button">
