@@ -662,13 +662,19 @@ li.appointment {
 }
 
 .overview-conditions-container {
-  margin-left: 5vh;
+  margin-left: 10vh;
 }
-.overview-conditions-cards {
-  width: 40vh;
 
+.condition-card {
+  width: 40vh;
   border-style: solid;
   border-radius: 10px;
+}
+.overview-conditions-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-left: 5vh;
 }
 
 .card-content {
