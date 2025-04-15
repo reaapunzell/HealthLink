@@ -2,7 +2,6 @@ import React from "react";
 import Navigation from "./Navigation";
 import { useNavigate } from "react-router-dom";
 import "/src/assets/style.css";
-import OverviewConditions from "./OverviewConditions";
 
 function MediCard() {
   const navigate = useNavigate();
@@ -12,7 +11,6 @@ function MediCard() {
   };
   return (
     <div className="app-container">
-      <Navigation />
       <div className="medi-card-container">
         <h2>MediCard</h2>
         <div className="medical-card" id="medicalCard">
@@ -45,9 +43,6 @@ function MediCard() {
         </div>
 
         <button className="medical-history-btn">Medical History</button>
-      </div>
-      <div className="medicard-conditions">
-        <OverviewConditions />
       </div>
     </div>
   );

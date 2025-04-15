@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navigation from "./components/Navigation";
-import MediCard from "./components/MediCard";
+import Medical from "./pages/Medical";
 import BookAppointment from "./components/BookAppointment";
 import Dashboard from "./pages/Dashboard";
 import Map from "./components/Map";
@@ -18,7 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/navigation" element={<Navigation />} />
-        <Route path="/medicard" element={<MediCard />} />
+        <Route path="/medicard" element={<Medical />} />
         <Route path="/bookappointment" element={<BookAppointment />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/map" element={<Map />} />

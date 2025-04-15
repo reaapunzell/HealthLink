@@ -129,7 +129,6 @@ button:focus {
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
-
 /* Main container for the navigation bar */
 .navigation-bar {
   position: absolute;
@@ -145,40 +144,58 @@ button:focus {
   z-index: 1000;
 }
 
+/* Logo styling */
 .navigation-bar img {
-  width: 100%;
+  width: auto;
   height: 5vh;
+  max-width: 150px;
+  margin-left: 15px;
   flex-shrink: 0;
 }
+
+/* Navigation links container */
 .nav-links {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-}
-.nav-link {
-  font-family: Arimo, sans-serif;
-  font-size: 16px;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 10px 20px;
-  border-radius: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  gap: 5px;
 }
 
-.navigation-bar .nav-link.active,
-.navigation-bar .nav-link:hover {
+/* Individual nav link styling */
+.nav-link {
+  display: flex;
+  align-items: center;
+  font-family: Arimo, sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Active and hover states */
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link.active {
   color: var(--primary-color);
   font-weight: bold;
 }
 
+/* Icon styling */
 .nav-icon {
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  vertical-align: middle;
+  transition: filter 0.3s ease;
+}
+
+/* Icon states */
+.nav-link:hover .nav-icon,
+.nav-link.active {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(92%) saturate(2000%)
+    hue-rotate(100deg);
 }
 
 select {
