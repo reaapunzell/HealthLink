@@ -697,3 +697,75 @@ li.appointment {
 .card-content {
   margin-left: 2vh;
 }
+
+/* Settings Page Styles */
+.settings-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.settings-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.settings-card .card-body {
+  padding: 2rem;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+/* Tab styling */
+.nav-tabs .nav-link {
+  color: #6c757d;
+  font-weight: 500;
+  border: none;
+  padding: 0.75rem 1.5rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+  background: transparent;
+}
+
+/* Form styling */
+.form-label {
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 1rem;
+  }
+
+  .settings-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .nav-tabs .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
