@@ -2,6 +2,11 @@ import Nav from "react-bootstrap/Nav";
 import "/src/assets/style.css";
 import logo from "/src/assets/Healthlink-logo.svg";
 import { NavLink } from "react-router-dom";
+import homeIcon from "/src/assets/home-icon.svg";
+import personIcon from "/src/assets/person-icon.svg";
+import clinicIcon from "/src/assets/clinic-icon.svg";
+import bookIcon from "/src/assets/book-icon.svg";
+import settingsIcon from "/src/assets/settings-icon.svg";
 
 function Navigation() {
   return (
@@ -15,7 +20,7 @@ function Navigation() {
             className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             <img
-              src="/src/assets/home-icon.svg"
+              src= {homeIcon}
               alt="Dashboard"
               className="nav-icon"
             />
@@ -29,7 +34,7 @@ function Navigation() {
             className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             <img
-              src="/src/assets/person-icon.svg"
+              src={personIcon}
               alt="medicard-icon"
               className="nav-icon"
             />
@@ -43,7 +48,7 @@ function Navigation() {
             className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             <img
-              src="/src/assets/clinic-icon.svg"
+              src={clinicIcon}
               alt="clinic-icon"
               className="nav-icon"
             />
@@ -57,7 +62,7 @@ function Navigation() {
             className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             <img
-              src="/src/assets/book-icon.svg"
+              src={bookIcon}
               alt="book-icon"
               className="nav-icon"
             />
@@ -71,7 +76,7 @@ function Navigation() {
             className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             <img
-              src="/src/assets/settings-icon.svg"
+              src={settingsIcon}
               alt="settings-icon"
               className="nav-icon"
             />

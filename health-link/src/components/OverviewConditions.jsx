@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "/src/assets/style.css";
+import diabetesIcon from "/src/assets/diabetes-icon.svg";
+import asthmaIcon from "/src/assets/asthma-icon.svg";
+import hypertensionIcon from "/src/assets/hypertension-icon.svg";
 
 const OverviewConditions = () => {
   const navigate = useNavigate();
@@ -11,21 +14,21 @@ const OverviewConditions = () => {
       id: 1,
       title: "Asthma",
       description: "Learn about asthma symptoms and treatments",
-      icon: "/src/assets/asthma-icon.svg",
+      icon: `${asthmaIcon}`,
       articlePath: "/articles/asthma", //
     },
     {
       id: 2,
       title: "Diabetes",
       description: "Managing diabetes effectively",
-      icon: "/src/assets/diabetes-icon.svg",
+      icon: `${diabetesIcon}`,
       articlePath: "/articles/diabetes",
     },
     {
       id: 3,
       title: "Hypertension",
       description: "Understanding high blood pressure",
-      icon: "/src/assets/hypertension-icon.svg",
+      icon: `${hypertensionIcon}`,
       articlePath: "/articles/hypertension",
     },
   ];
