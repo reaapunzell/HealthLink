@@ -4,8 +4,7 @@
 
 ## 🌍 Live Site
 
-🔗 [View Health Link Live](https://healthlink-za.netlify.app/)  
-*(Replace this with your deployed site link)*
+🔗 [View Health Link Live](https://healthlink-za.netlify.app/) 
 
 ---
 
